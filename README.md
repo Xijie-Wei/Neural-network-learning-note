@@ -1,4 +1,8 @@
 # Neural-network-learning-note
+
+## Introduction
 This is a note taken down when I was learning to set up and train a network with Pytorch.
-This project is about to get familiar with Pytorch with the tutorial 'Deep Learning with PyTorch: A 60 Minute Blitz' by Soumith Chintala
-https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html
+This project is about getting familiar with Pytorch with the tutorial 'Deep Learning with PyTorch: A 60 Minute Blitz' by Soumith Chintala from: https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html And try to set up a hand-writing number classification neural network with dataset MNIST. This repository is a note and I`ll try to explain my code as possible. However, parts like the neural network structure are what I`m not familiar with (which I still need to spend time learning, I`m just a beginner in this field), so I`ll just skip them.
+
+## Code 
+In this part, I`ll try to explain my code as much as possible.\
