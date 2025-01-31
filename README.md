@@ -7,3 +7,11 @@ This project is about getting familiar with Pytorch with the tutorial 'Deep Lear
 ## Code 
 In this part, Ill try to explain my code as much as possible.<br/>
 The libs used in this project are `torch` and `torchvision`
+```
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torchvision
+import torchvision.transforms as transforms
+import torch.optim as optim
+```
