@@ -7,7 +7,7 @@ import torchvision
 import torchvision.transforms as transforms
 import torch.optim as optim
 
-# Declear a network
+# Declare a network
 class net(nn.Module):
 
     def __init__(self):
@@ -55,7 +55,7 @@ train_set = torchvision.datasets.MNIST(root='./data',train = True,
                                         download = True, transform = transform)
 trainloader = torch.utils.data.DataLoader(train_set, batch_size=batch_size,
                                           shuffle=True, num_workers=0)
-print("CIFAR10 loaded")
+print("MNIST loaded")
 
 # Define loss function
 criterion = nn.CrossEntropyLoss()
