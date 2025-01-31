@@ -1,4 +1,4 @@
-![图片](https://github.com/user-attachments/assets/b43cb66e-afe2-4a34-b8a9-03e10d4f709d)# Neural-network-learning-note
+# Neural-network-learning-note
 
 ## Introduction
 This is a note taken down when I was learning to set up and train a network with Pytorch.
