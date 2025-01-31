@@ -70,4 +70,10 @@ for epoch in range(3): #number of epoch
             print(f'[{epoch + 1}, {i +1:5d}] loss: {running_loss / 2000:.3f}')
             running_loss = 0.0
 ```
-epoch means how many times we use the dataset to train the network. Then we traverse `data` in `trainloader`, the `data` contains two parts `inputs` and `labels` where `inputs` are 
+epoch means how many times we use the dataset to train the network. Then we traverse `data` in `trainloader`, the `data` contains two parts `inputs` and `labels` where `inputs` are image data and `labels` are expected output. Then call `optimizer.zero_grad()` to set the gradient of the parameters 0. After that, input the `inputs` into the network and calculate `loss` using `criterion(outputs,labels)`, then call `loss.backward()` and `optimizer.step()`.
+After training the network, call
+```
+PATH = './cifar_net.pth'
+torch.save(network.state_dict(), PATH)
+```
+To store the parameter imformation.
