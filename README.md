@@ -41,4 +41,33 @@ trainloader = torch.utils.data.DataLoader(train_set, batch_size=batch_size,
                                           shuffle=True, num_workers=0)
 print("MNIST loaded")
 ```
-The `transform` is declared with two purpose, one is to put the data in `tensor` and normalize it, for details, check https://pytorch.org/vision/0.9/_modules/torchvision/transforms/transforms.html#Compose
+The `transform` is declared with two purposes, one is to put the data in `tensor` and normalize it, for details, check https://pytorch.org/vision/0.9/_modules/torchvision/transforms/transforms.html#Compose for details. The `batch_size` should be the channel size? for MNIST database, the image is a grayscale image, so only 1 is set, but for other datasets with more color, it should be set higher like 3, and this should fit the size of the input in the first layer of the network (Im not sure about this).
+
+Then we need to define the loss function the loss function is a built-in function in optim, which uses SGD. There are two main factors loss rate `lr` and `momentum`, which would influence the quality of the training, as why they are set 0.001 and 0.9, emm... IDK.
+```
+# Define loss function
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(network.parameters(),lr=0.001,momentum = 0.9)
+```
+
+Then we go to the main part of training the network
+```
+for epoch in range(3): #number of epoch
+    running_loss = 0.0
+    for i, data in enumerate(trainloader, 0):
+        # Load data list
+        inputs,labels = data[0].to('cuda'),data[1].to('cuda')
+        # Zero the gradient
+        optimizer.zero_grad()
+
+        outputs = network(inputs)
+        loss = criterion(outputs,labels)
+        loss.backward()
+        optimizer.step()
+
+        running_loss += loss.item()
+        if i % 2000 == 1999:    # print every 2000 mini-batches
+            print(f'[{epoch + 1}, {i +1:5d}] loss: {running_loss / 2000:.3f}')
+            running_loss = 0.0
+```
+epoch means how many times we use the dataset to train the network. Then we traverse `data` in `trainloader`, the `data` contains two parts `inputs` and `labels` where `inputs` are 
