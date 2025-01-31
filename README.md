@@ -1,4 +1,4 @@
-# Neural-network-learning-note
+![图片](https://github.com/user-attachments/assets/b43cb66e-afe2-4a34-b8a9-03e10d4f709d)# Neural-network-learning-note
 
 ## Introduction
 This is a note taken down when I was learning to set up and train a network with Pytorch.
@@ -76,4 +76,10 @@ After training the network, call
 PATH = './cifar_net.pth'
 torch.save(network.state_dict(), PATH)
 ```
-To store the parameter imformation.
+To store the parameter information.
+## Result
+After training the network, I write a `test.py` and find out the accuracy is 98.52% when testing with test dataset in MNIST
+![图片](https://github.com/user-attachments/assets/54b34e90-7156-4824-b0a1-263693f44b77)
+
+## Note
+This note is based on my limited knowledge. As Im a beginner in training neural networks, there are probably mistakes in the note.
