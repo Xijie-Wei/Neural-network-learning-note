@@ -6,4 +6,4 @@ This project is about getting familiar with Pytorch with the tutorial 'Deep Lear
 
 ## Code 
 In this part, I`ll try to explain my code as much as possible.<br/>
-The libs used in this project are 'torch' and 'torchvision'
+The libs used in this project are `torch` and `torchvision`
